@@ -15,6 +15,12 @@ class SettingModel extends Model
         'udc_name',
         'up_bn_name',
         'mobile',
+        'chairman_bn_name',
+        'up_logo',
+        'div_a_idd',
+        'dis_a_idd',
+        'up_a_idd',
+        'un_a_idd',
         'pad_img_path',
     ];    
 }

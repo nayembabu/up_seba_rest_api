@@ -5,9 +5,9 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
 
-class CorsFilter.phpFilter implements FilterInterface
+class CorsFilter implements FilterInterface
 {
-    public function before(RequestInterface request)
+    public function before(RequestInterface $request, $arguments = null)
     {
         header('Access-Control-Allow-Origin: *');
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
@@ -15,7 +15,7 @@ class CorsFilter.phpFilter implements FilterInterface
 
     //--------------------------------------------------------------------
 
-    public function after(RequestInterface request, ResponseInterface response)
+    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
         
     }
