@@ -38,11 +38,11 @@ $routes->group('api', function($routes)
 {	
 	$routes->group('certificate_default', function($routes)
 	{
-		$routes->get('all', 'Adminview::findAll');
-		$routes->get('single/(:any)', 'Adminview::find/$1');
-		$routes->post('save', 'Adminview::insert');
-		$routes->put('update', 'Adminview::update');
-		$routes->delete('delete/(:any)', 'Adminview::delete/$1');
+		$routes->get('all', 'Api_send::cer_default_findAll');
+		$routes->get('single/(:any)', 'Api_send::cer_default_find/$1');
+		$routes->post('save', 'Api_send::cer_default_insert');
+		$routes->put('update', 'Api_send::cer_default_update');
+		$routes->delete('delete/(:any)', 'Api_send::cer_default_delete/$1');
 	});
 });
 
