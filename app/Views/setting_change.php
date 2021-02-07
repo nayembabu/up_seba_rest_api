@@ -12,106 +12,173 @@
   <body>
       
     <div class="container mt-5">
+      <form action="" method="post">
         <div class="row">
 
 
             <div class="col-md-3">
                 <div class="form-group">
                   <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
-                </div>
-            </div>
-            
-            <div class="col-md-3">
-                <div class="form-group">
-                  <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
+                  <input type="text" readonly class="form-control readonly" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                  <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
+                  <label for="">UP Bangla Name</label>
+                  <input type="text" readonly class="form-control readonly" name="" id="" aria-describedby="helpId" value="<?= $settings['up_bn_name']; ?>" placeholder="">
+                </div>
+            </div>            
+            <div class="col-md-3">
+                <div class="form-group">
+                  <label for="">UP Address</label>
+                  <input type="text" readonly class="form-control readonly" name="" id="" aria-describedby="helpId" value="<?= $settings['address']; ?>" placeholder="">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                  <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
+                  <label for="">UP Bangla Address</label>
+                  <input type="text" readonly class="form-control readonly" name="" id="" aria-describedby="helpId" value="<?= $settings['bn_address']; ?>" placeholder="">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                  <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
+                  <label for="">UP Chairman English Name</label>
+                  <input type="text" readonly class="form-control readonly" name="" id="" aria-describedby="helpId" value="<?= $settings['chairman']; ?>" placeholder="">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                  <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
+                  <label for="">UP Chairman Bangla Name</label>
+                  <input type="text" readonly class="form-control readonly" name="" id="" aria-describedby="helpId" value="<?= $settings['chairman_bn_name']; ?>" placeholder="">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                  <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
+                  <label for="">UP Mobile</label>
+                  <input type="text" readonly class="form-control readonly" name="" id="" aria-describedby="helpId" value="<?= $settings['mobile']; ?>" placeholder="">
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                  <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
-                </div>
+            <div class="col-md-3 div_list" style="display:none">
+              <div class="form-group">
+                <label for=""></label>
+                <select class="form-control" name="" id="">
+                  <option> Select </option>
+                  <?php foreach ($all_div as $div) { ?> 
+                  <option value="<?= $div['div_id']; ?>" <?php if ($div['div_id'] == $settings['div_a_idd']) {
+                    echo 'selected';
+                  } ?>><?= $div['div_bn_name']; ?></option>
+                  <?php } ?>
+                </select>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                  <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
-                </div>
+            <div class="col-md-3 dist_list">
             </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                  <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
-                </div>
+            <div class="col-md-3 up_list">
             </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                  <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
-                </div>
+            <div class="col-md-3 un_list">
             </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                  <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                  <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                  <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
-                </div>
-            </div>
-
 
         </div>
 
+        <div class="text-center mt-3" >
+          <?= $settings['div_bn_name']; ?> ==> <?= $settings['dist_bn_name']; ?> ==> <?= $settings['up_bn_name']; ?> ==> <?= $settings['un_bn_name']; ?>
+        </div>
+
+        <div class="mt-3">
           <button type="button" class="btn btn-primary btn-lg mt-3 editable_btn"> Edit </button>
+          <button type="submit" style="display:none" class="btn btn-primary btn-lg mt-3 save_btn"> Update </button>
+        </div>
+      </form>
     </div>
 
-    <!-- Optional JavaScript -->
+
+<!-- 
+ -->
+
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
+
+
+    <!-- Optional JavaScript -->
+
+    <script>
+      var editable_btn = document.querySelector('.editable_btn');
+      var readonly = document.querySelectorAll('.readonly');
+      var div_list = document.querySelector('.div_list');
+      var save_btn = document.querySelector('.save_btn');
+
+
+      editable_btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        for (let l = 0; l < readonly.length; l++) {
+          readonly[l].removeAttribute('readonly');
+        }
+
+        div_list.style.display = "block";
+        editable_btn.style.display = "none";
+        save_btn.style.display = "block";
+
+        // editable_btn.classList.add('save_btn');
+        // editable_btn.innerText = 'Update';
+        // editable_btn.type = 'submit';
+       })
+
+       div_list.addEventListener('change', (event) => {
+         let div_id = event.target.value;
+         getDistList(div_id);
+       })
+
+       function getDistList(div_id) {
+        const query = `getdistlist/${div_id}`;
+        fetch(query)
+          .then(res => res.json())
+          .then(data => setdistlist(data))
+       }
+
+       const setdistlist = data => {
+         let 
+       }
+
+
+
+
+    // const div_id = document.querySelector('.div_list').value;
+    // const query = `https://www.themealdb.com/api/json/v1/1/search.php?f=${searchQuery}`;
+
+    // fetch(query)
+    //     .then(res => res.json())
+    //     .then(data => getFood(data))
+
+
+
+
+    // const getFood = data => {
+    //     let food = '';
+    //     for (let i = 0; i < data.meals.length; i++) {
+    //         food +=
+    //             `<div class="col-sm-3 mb-3">
+    //                 <div class="card">
+    //                 <img src="${data.meals[i].strMealThumb}" class="card-img-top">
+    //                     <div class=" card-body">
+    //                         <h5 class="card-title">${data.meals[i].strMeal}</h5>
+    //                         <button onclick="showMealDetails('${data.meals[i].idMeal}');" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Details</button>
+    //                     </div>
+    //                 </div> 
+    //             </div>`;
+    //     }
+
+    //     mealsContainer.innerHTML = food;
+    // }
+
+
+
+
+    </script>
+
   </body>
 </html>
