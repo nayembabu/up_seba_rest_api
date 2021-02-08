@@ -19,13 +19,13 @@
             <div class="col-md-3">
                 <div class="form-group">
                   <label for="">UP English Name</label>
-                  <input type="text" readonly class="form-control readonly" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name']; ?>" placeholder="">
+                  <input type="text" readonly class="form-control readonly" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name_en']; ?>" placeholder="">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                   <label for="">UP Bangla Name</label>
-                  <input type="text" readonly class="form-control readonly" name="" id="" aria-describedby="helpId" value="<?= $settings['up_bn_name']; ?>" placeholder="">
+                  <input type="text" readonly class="form-control readonly" name="" id="" aria-describedby="helpId" value="<?= $settings['up_name_bn']; ?>" placeholder="">
                 </div>
             </div>            
             <div class="col-md-3">
@@ -108,8 +108,13 @@
     <script>
       var editable_btn = document.querySelector('.editable_btn');
       var readonly = document.querySelectorAll('.readonly');
-      var div_list = document.querySelector('.div_list');
       var save_btn = document.querySelector('.save_btn');
+
+      
+      var div_list = document.querySelector('.div_list');
+      var dist_list = document.querySelector('.dist_list');
+      var up_list = document.querySelector('.up_list');
+      var up_list = document.querySelector('.up_list');
 
 
       editable_btn.addEventListener('click', (e) => {
@@ -128,22 +133,70 @@
         // editable_btn.type = 'submit';
        })
 
+
        div_list.addEventListener('change', (event) => {
          let div_id = event.target.value;
          getDistList(div_id);
        })
+       
+       dist_list.addEventListener('change', (event) => {
+         let dist_id = event.target.value;
+         getUpList(up_id);
+       })
+       
+       up_list.addEventListener('change', (event) => {
+         let up_id = event.target.value;
+         getunList(div_id);
+       })
+       
+       un_list.addEventListener('change', (event) => {
+         let un_id = event.target.value;
+         getDistList(div_id);
+       })
+
+
+
 
        function getDistList(div_id) {
         const query = `getdistlist/${div_id}`;
         fetch(query)
           .then(res => res.json())
-          .then(data => setdistlist(data))
+          .then(data => {
+
+            let dist_htmtl_data = '';
+            for (let a = 0; a < data.length; a++) {
+              dist_htmtl_data += `<option value="${data[a].dist_id}" >${data[a].dist_bn_name}</option>`;           
+            }
+
+            dist_list.innerHTML = 
+                  `<div class="form-group">
+                    <label for=""></label>
+                    <select class="form-control" name="" id="">
+                      <option> Select </option>
+                      '${dist_htmtl_data}'
+                    </select>
+                  </div>`;
+
+          })
        }
 
-       const setdistlist = data => {
-         let 
-       }
 
+
+
+
+
+
+
+       /**
+        
+              <div class="form-group">
+                <label for=""></label>
+                <select class="form-control" name="" id="">
+                  <option> Select </option>
+                  
+                </select>
+              </div>
+        */
 
 
 

@@ -45,7 +45,25 @@ $routes->group('api', function($routes)
 		$routes->put('update', 'Api_send::cer_default_update');
 		$routes->delete('delete/(:any)', 'Api_send::cer_default_delete/$1');
 	});
+
+	$routes->group('certificate_entry', function($routes)
+	{
+		$routes->get('all_data', 'Api_send::cer_entry_findAll');
+		$routes->get('datewise_data/(:any)', 'Api_send::cer_entry_findAll_byDate/$1');
+		$routes->get('search_name/(:any)', 'Api_send::cer_entry_search_by_name/$1');
+		$routes->get('search_father/(:any)', 'Api_send::cer_entry_search_by_Fname/$1');
+		$routes->get('search_mother/(:any)', 'Api_send::cer_entry_search_by_Mname/$1');
+		$routes->get('lastid_thisdate/(:any)', 'Api_send::cer_entry_findLast_byDate/$1');
+		$routes->get('single/(:any)', 'Api_send::cer_entry_find/$1');
+		$routes->get('search_id/(:any)', 'Api_send::cer_entry_find_byDateWiseId/$1');
+		$routes->post('entry', 'Api_send::cer_entry_insert');
+		$routes->put('edit', 'Api_send::cer_entry_update');
+		$routes->delete('delete/(:any)', 'Api_send::cer_entry_delete/$1');
+	});
 });
+
+
+
 
 /*
  * --------------------------------------------------------------------
