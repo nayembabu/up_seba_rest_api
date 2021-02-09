@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 06, 2021 at 05:12 PM
+-- Generation Time: Feb 09, 2021 at 03:44 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.13
 
@@ -33,8 +33,27 @@ CREATE TABLE `certificate_entry` (
   `cer_entry` longtext COLLATE utf8_unicode_ci NOT NULL,
   `cer_title` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `cer_id_datewise` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
-  `timestamp` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `cer_entry_date` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `timestamp` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `person_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `father_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `mother_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `ward` int(5) NOT NULL,
+  `vill` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `post` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `nidorbirth` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `certificate_entry`
+--
+
+INSERT INTO `certificate_entry` (`cer_p_iddd`, `cer_entry`, `cer_title`, `cer_id_datewise`, `cer_entry_date`, `timestamp`, `person_name`, `father_name`, `mother_name`, `ward`, `vill`, `post`, `nidorbirth`) VALUES
+(1, 'Kalam', 'Kakkalsjkldj', '21020201', '2021-02-02', '0', 'আবুল', '', '', 0, '', '', 0),
+(2, 'Kalam', 'Kakkalsjkldj', '21020401', '2021-04-02', '0', 'আবু', '', '', 0, '', '', 0),
+(3, 'Kalam', 'Kakkalsjkldj', '21020402', '2021-04-02', '0', '', '', '', 0, '', '', 0),
+(4, 'Kalam', 'Kakkalsjkldj', '21020403', '2021-04-02', '0', '', '', '', 0, '', '', 0),
+(5, 'Kalam', 'Kakkalsjkldj', '21020202', '2021-02-02', '0', '', '', '', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -180,13 +199,13 @@ INSERT INTO `div_list` (`div_id`, `div_name`, `div_bn_name`, `div_url`) VALUES
 
 CREATE TABLE `settings` (
   `setting_p_iid` int(11) NOT NULL,
-  `up_name` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `up_name_en` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `up_name_bn` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `address` longtext COLLATE utf8_unicode_ci NOT NULL,
   `bn_address` longtext COLLATE utf8_unicode_ci,
   `chairman` longtext COLLATE utf8_unicode_ci NOT NULL,
   `chairman_bn_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `udc_name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `up_bn_name` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `mobile` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `pad_img_path` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `up_logo` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
@@ -200,8 +219,8 @@ CREATE TABLE `settings` (
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`setting_p_iid`, `up_name`, `address`, `bn_address`, `chairman`, `chairman_bn_name`, `udc_name`, `up_bn_name`, `mobile`, `pad_img_path`, `up_logo`, `div_a_idd`, `dis_a_idd`, `up_a_idd`, `un_a_idd`) VALUES
-(1, '4 No Dhum Union Parishad', 'Zorargonj, Mirsharai, Chittagong', 'জোরারগঞ্জ, মিরসরাই, চট্টগ্রাম।', 'Abul Khair Md. Jahangir', 'আবুল খায়ের মোঃ জাহাঙ্গীর', 'Abu Sayed', 'ধুম ইউনিয়ন পরিষদ', '0', '0', '0', 0, 0, 0, 0);
+INSERT INTO `settings` (`setting_p_iid`, `up_name_en`, `up_name_bn`, `address`, `bn_address`, `chairman`, `chairman_bn_name`, `udc_name`, `mobile`, `pad_img_path`, `up_logo`, `div_a_idd`, `dis_a_idd`, `up_a_idd`, `un_a_idd`) VALUES
+(1, '4 No Dhum Union Parishad', 'ধুম ইউনিয়ন পরিষদ', 'Zorargonj, Mirsharai, Chittagong', 'জোরারগঞ্জ, মিরসরাই, চট্টগ্রাম।', 'Abul Khair Md. Jahangir', 'আবুল খায়ের মোঃ জাহাঙ্গীর', 'Abu Sayed', '0', '0', '0', 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -5337,7 +5356,7 @@ ALTER TABLE `up_list`
 -- AUTO_INCREMENT for table `certificate_entry`
 --
 ALTER TABLE `certificate_entry`
-  MODIFY `cer_p_iddd` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cer_p_iddd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `cer_deft`
