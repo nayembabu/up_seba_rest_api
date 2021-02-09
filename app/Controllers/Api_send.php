@@ -5,6 +5,11 @@ namespace App\Controllers;
 use Codeigniter\Controller;
 use App\Models\CdefaultModel;
 use App\Models\CentryModel;
+use App\Models\SettingModel;
+use App\Models\DivModel;
+use App\Models\DistModel;
+use App\Models\UpModel;
+use App\Models\UnModel;
 
 class Api_send extends BaseController
 {
@@ -154,6 +159,19 @@ class Api_send extends BaseController
 		$cer_entrys = new CentryModel();
 		$cer_entrys->delete($id);
         return $this->response->setStatusCode(200);
+	}
+
+	public function getUpSetting()
+	{
+		$setting = new SettingModel();
+		$div_list = new DivModel();
+		$get_data = $setting->join('div_list', 'div_list.div_id = settings.div_a_idd', 'left')
+									->join('dist_list', 'dist_list.dist_id = settings.dis_a_idd', 'left')
+									->join('up_list', 'up_list.up_id = settings.up_a_idd', 'left')
+									->join('un_list', 'un_list.un_id = settings.un_a_idd', 'left')
+									->first();
+
+		return $this->response->setStatusCode(200)->setJSON($get_data);
 	}
 	
 }

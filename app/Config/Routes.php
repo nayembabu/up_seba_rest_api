@@ -60,6 +60,16 @@ $routes->group('api', function($routes)
 		$routes->put('edit', 'Api_send::cer_entry_update');
 		$routes->delete('delete/(:any)', 'Api_send::cer_entry_delete/$1');
 	});
+	$routes->group('setting', function($routes)
+	{
+		$routes->get('getup', 'Api_send::getUpSetting');
+		$routes->get('getdivision', 'Setting::getDiv');
+		$routes->get('getdistric/(:any)', 'Setting::getDistByDivId/$1');
+		$routes->get('getupazilla/(:any)', 'Setting::getUpByDistId/$1');
+		$routes->get('getunion/(:any)', 'Setting::getUnByUpId/$1');
+	});
+
+
 });
 
 

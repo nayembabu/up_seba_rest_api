@@ -24,6 +24,13 @@ class Setting extends BaseController
         echo view('setting_change', $data);
 	}
 
+	public function getDiv()
+	{
+		$div_list = new DvModel();
+		$data_array = $div_list->findAll();
+		return $this->response->setJSON($data_array);
+	}
+
 	public function getDistByDivId($div_id)
 	{
 		$dist_list = new DistModel();
@@ -40,10 +47,10 @@ class Setting extends BaseController
 		return $this->response->setJSON($data_array);
 	}
 	
-	public function getUnByUpId($un_id)
+	public function getUnByUpId($up_id)
 	{
 		$un_list = new UnModel();
-		$data_array = $un_list->where('upazilla_id', $un_id)
+		$data_array = $un_list->where('upazilla_id', $up_id)
 								->findAll();
 		return $this->response->setJSON($data_array);
 	}
